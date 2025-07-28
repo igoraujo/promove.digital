@@ -43,12 +43,6 @@ Temporary Items
 # iCloud generated files
 *.icloud
 
-### Sass ###
-.sass-cache/
-*.css.map
-*.sass.map
-*.scss.map
-
 ### VisualStudioCode ###
 .vscode/*
 !.vscode/settings.json
@@ -67,18 +61,3 @@ Temporary Items
 # Ignore all local history of files
 .history
 .ionide
-
-### Web ###
-*.asp
-*.cer
-*.csr
-*.css
-*.htm
-*.html
-*.js
-*.jsp
-*.php
-*.rss
-*.wasm
-*.wat
-*.xhtml
