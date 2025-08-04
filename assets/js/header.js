@@ -16,19 +16,12 @@ async function loadHTML(url, elementId) {
     }
 }
 
-// Função para inicializar scripts que podem depender do footer
-function initializeFooterDependentScripts() {
-    console.log('Scripts dependentes do footer inicializados.');
-}
-
 // Inicialização principal da página
 document.addEventListener('DOMContentLoaded', async () => {
-    console.log('DOM Content Loaded. Iniciando carregamento do header...');
+    // console.log('DOM Content Loaded. Iniciando carregamento do header...');
     const headerLoaded = await loadHTML('components/header.html', 'header');
 
-    if (headerLoaded) {
-        initializeHeaderDependentScripts();
-    } else {
-        console.error('Falha ao carregar Header. Scripts dependentes não serão inicializados.');
-    }
+    // if (!headerLoaded) {
+    //     console.error('Falha ao carregar Header. Scripts dependentes não serão inicializados.');
+    // }
 });
