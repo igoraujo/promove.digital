@@ -3,16 +3,16 @@ async function loadHTML(url, elementId) {
     try {
         const response = await fetch(url);
         if (!response.ok) {
-            console.error(`Erro: Não foi possível carregar ${url}. Status: ${response.status} ${response.statusText}`);
-            return false; // Retorna false em caso de erro HTTP
+            // console.error(`Erro: Não foi possível carregar ${url}. Status: ${response.status} ${response.statusText}`);
+            return false;
         }
         const html = await response.text();
         document.getElementById(elementId).innerHTML = html;
-        console.log(`${url} carregado com sucesso.`);
-        return true; // Retorna true em caso de sucesso
+        // console.log(`${url} carregado com sucesso.`);
+        return true;
     } catch (error) {
-        console.error(`Erro de rede ou outra falha ao carregar ${url}:`, error);
-        return false; // Retorna false em caso de erro
+        // console.error(`Erro de rede ou outra falha ao carregar ${url}:`, error);
+        return false;
     }
 }
 
@@ -23,8 +23,10 @@ async function loadHTML(url, elementId) {
 
 // Inicialização principal da página
 document.addEventListener('DOMContentLoaded', async () => {
-    console.log('DOM Content Loaded. Iniciando carregamento do footer...');
+    // console.log('DOM Content Loaded. Iniciando carregamento do footer...');
     const footerLoaded = await loadHTML('components/footer.html', 'footer-placeholder');
+    document.getElementById('currentYear').textContent = new Date().getFullYear();
+
 
     // if (footerLoaded) {
     //     initializeFooterDependentScripts();
